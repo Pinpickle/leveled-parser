@@ -5,9 +5,8 @@ using Lambda;
 import yaml.Parser;
 import yaml.Yaml;
 import yaml.util.ObjectMap;
-import thx.Iterables;
-import thx.Maps;
 
+@:expose
 class LeveledParser
 {
     private var globalData:AnyObjectMap = new AnyObjectMap();
@@ -72,6 +71,14 @@ class LeveledParser
     {
         setDefault(data, 'layers', new AnyObjectMap());
         setDefault(data, 'gridSize', globalData.get('gridSize'));
+
+        var defaults:AnyObjectMap = globalData.get('defaults');
+        for (d in defaults.keys()) {
+            if (!data.exists(d)) {
+                data.set(d, defaults.get(d));
+            }
+        }
+
         var layers = new AnyObjectMap();
         var globalLayers:Iterable<Dynamic> = globalData.get('layers');
 
@@ -123,7 +130,7 @@ class LeveledParser
 
         var createObject = function () {
             var newObject = new AnyObjectMap();
-            
+
             mergeMap(newObject, typeObject);
             mergeMap(newObject, object);
 
@@ -206,4 +213,6 @@ class LeveledParser
     {
         return map.exists(key) ? map.get(key) : value;
     }
+
+    private static function main () { }
 }

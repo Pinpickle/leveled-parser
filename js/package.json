@@ -1,0 +1,27 @@
+{
+  "name": "leveled-parser",
+  "version": "0.0.1",
+  "description": "Parser for Leveled yaml files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinpickle/leveled-parser.git"
+  },
+  "files": [
+      "main.js"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinpickle/leveled-parser/issues"
+  },
+  "homepage": "https://github.com/pinpickle/leveled-parser#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4"
+  }
+}

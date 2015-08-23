@@ -5,7 +5,6 @@
     "description": "Parser for files created by the Leveled editor",
     "version": "0.0.1",
     "dependencies": {
-        "yaml": "",
-        "thx.core": ""
+        "yaml": ""
     }
 }

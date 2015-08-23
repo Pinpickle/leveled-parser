@@ -1,0 +1,7 @@
+-main leveled.LeveledParser
+
+-cp ../leveled
+
+-lib yaml
+
+-js ./js/leveled-parser.js
